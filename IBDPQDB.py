@@ -147,7 +147,7 @@ with tab2:
         num_q = col_n.number_input("Nº Preguntas", 1, 100, 10)
         
         col_p, col_l = st.columns(2)
-        sel_p = col_p.multiselect("Paper", ["1", "2", "3"])
+        sel_p = col_p.multiselect("Paper", ["1A","1B", "2", "3"])
         sel_l = col_l.multiselect("Level", ["HL", "SL", "AHL", "ASL"])
 
         if st.button("🚀 GENERAR EXAMEN"):
@@ -169,4 +169,5 @@ with tab2:
                 st.markdown('<button onclick="window.print()" style="width:100%; background:#28a745; color:white; border:none; padding:12px; border-radius:5px; cursor:pointer; font-weight:bold;">🖨️ IMPRIMIR / GUARDAR PDF</button>', unsafe_allow_html=True)
                 for _, r in exam.iterrows(): render_question(r)
             else:
+
                 st.warning("No hay preguntas que coincidan.")
